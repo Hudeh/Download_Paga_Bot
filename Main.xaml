@@ -1,0 +1,2008 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="4632,5960.8" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="46">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="42">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="4642.4,5756" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="https://www.mypaga.com/business" Name="Paga_url" />
+      <Variable x:TypeArguments="sd:DataTable" Name="PageStatement" />
+      <Variable x:TypeArguments="x:String" Name="username" />
+      <Variable x:TypeArguments="ss:SecureString" Name="password" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="4600.8,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="GetAppCredentials_ValueSoft.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_Username">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="username" />
+        </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Credential">
+          <Literal x:TypeArguments="x:String">TestRobot-Credential</Literal>
+        </InArgument>
+        <OutArgument x:TypeArguments="ss:SecureString" x:Key="out_Password">
+          <mva:VisualBasicReference x:TypeArguments="ss:SecureString" ExpressionText="password" />
+        </OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="4600.8,4886.4" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[Paga_url]">
+      <ui:OpenBrowser.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="4567.2,4784" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="page_username" />
+              <Variable x:TypeArguments="x:String" Name="paga_password" />
+              <Variable x:TypeArguments="x:String" Name="month_check" />
+              <Variable x:TypeArguments="x:String" Name="last_mont" />
+              <Variable x:TypeArguments="x:String" Name="Aug" />
+              <Variable x:TypeArguments="x:String" Name="Sep" />
+              <Variable x:TypeArguments="x:String" Name="Oct" />
+              <Variable x:TypeArguments="x:String" Name="Nov" />
+              <Variable x:TypeArguments="x:String" Name="Dec" />
+              <Variable x:TypeArguments="x:Boolean" Name="not_Found" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'LABEL'" sap:VirtualizedContainerService.HintSize="4525.6,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
+              <ui:WaitUiElementAppear.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6447c92c-8cee-4455-9685-639839de7ec4" InformativeScreenshot="b74f273658a4c041b36808d97b415e75" Selector="&lt;webctrl tag='LABEL' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:WaitUiElementAppear.Target>
+            </ui:WaitUiElementAppear>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  username'" sap:VirtualizedContainerService.HintSize="4525.6,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[username]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2d56ef1f-2ca7-4b6c-a6e0-d8cae1e36021" InformativeScreenshot="cd57f31c5f50222b5581ec6dd4157b72" Selector="&lt;webctrl id='username' tag='INPUT' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  button_authenticate_...'" sap:VirtualizedContainerService.HintSize="4525.6,107.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e8040b0e-4fd5-4caf-997c-f3c743bb31f6" InformativeScreenshot="df0963f24cbefd94f8c9bb133985b2c2" Selector="&lt;webctrl id='button_authenticate_login' tag='A' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:TypeSecureText ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Type Secure Text 'INPUT  password'" EmptyField="True" sap:VirtualizedContainerService.HintSize="4525.6,107.2" sap2010:WorkflowViewState.IdRef="TypeSecureText_1" SecureText="[password]" SimulateType="True">
+              <ui:TypeSecureText.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3cd393da-39ad-4cfd-9253-c4b1ed876041" InformativeScreenshot="a8420d70da72cdbb49e0fb77e1c7e716" Selector="&lt;webctrl id='password' tag='INPUT' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeSecureText.Target>
+            </ui:TypeSecureText>
+            <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="4525.6,22.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  javascript:postForm(...'" sap:VirtualizedContainerService.HintSize="4525.6,107.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="09466a7d-6245-4464-9cf1-554b6cd887f9" InformativeScreenshot="c09413a9bd41e31ab6bb1c1268dd864a" Selector="&lt;webctrl parentid='form_login' tag='A' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="4525.6,22.4" sap2010:WorkflowViewState.IdRef="Delay_2" />
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  business-menuitem-tr...'" sap:VirtualizedContainerService.HintSize="4525.6,107.2" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d4b84d45-ce62-446c-8daf-d285371ce21f" InformativeScreenshot="3234580584236a8ee59380c657d88c1d" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl aaname='Transaction History' tag='A' idx='1' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  business-menuitem-tr...'" sap:VirtualizedContainerService.HintSize="4525.6,107.2" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="88b77b53-5413-4ee4-b835-7bfe01da40b3" InformativeScreenshot="dbafa55070309df78616bca6c0fbc1e7" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl id='business-menuitem-transaction-history-bill-payments' tag='A' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <Assign sap:VirtualizedContainerService.HintSize="4525.6,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[month_check]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[DateTime.Now.ToString(“MM/yyyy”)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="4525.6,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[last_mont]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">07/2020</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="4525.6,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[Aug]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">08/2020</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="4525.6,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[Sep]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">["09/2020"]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="4525.6,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[Oct]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">10/2020</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="4525.6,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[Nov]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">["11/2020"]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="4525.6,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[Dec]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">12/2020</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="4525.6,22.4" sap2010:WorkflowViewState.IdRef="Delay_3" />
+            <If Condition="[month_check =Aug]" sap:VirtualizedContainerService.HintSize="4525.6,2745.6" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="794.4,1997.6" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  _struts2_jquery...'" sap:VirtualizedContainerService.HintSize="752.8,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_49" Item="1">
+                    <ui:SelectItem.Items>
+                      <scg:List x:TypeArguments="x:String" Capacity="32">
+                        <x:String>1</x:String>
+                        <x:String>2</x:String>
+                        <x:String>3</x:String>
+                        <x:String>4</x:String>
+                        <x:String>5</x:String>
+                        <x:String>6</x:String>
+                        <x:String>7</x:String>
+                        <x:String>8</x:String>
+                        <x:String>9</x:String>
+                        <x:String>10</x:String>
+                        <x:String>11</x:String>
+                        <x:String>12</x:String>
+                        <x:String>13</x:String>
+                        <x:String>14</x:String>
+                        <x:String>15</x:String>
+                        <x:String>16</x:String>
+                        <x:String>17</x:String>
+                        <x:String>18</x:String>
+                        <x:String>19</x:String>
+                        <x:String>20</x:String>
+                        <x:String>21</x:String>
+                        <x:String>22</x:String>
+                        <x:String>23</x:String>
+                        <x:String>24</x:String>
+                        <x:String>25</x:String>
+                        <x:String>26</x:String>
+                        <x:String>27</x:String>
+                        <x:String>28</x:String>
+                        <x:String>29</x:String>
+                        <x:String>30</x:String>
+                        <x:String>31</x:String>
+                      </scg:List>
+                    </ui:SelectItem.Items>
+                    <ui:SelectItem.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ff4fa367-d7c5-4194-9233-1f84ff925287" InformativeScreenshot="48824492812ae3b8d5881110a2c60188" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='SELECT' idx='1' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SelectItem.Target>
+                  </ui:SelectItem>
+                  <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  _struts2_jquery...'" sap:VirtualizedContainerService.HintSize="752.8,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_50" Item="Jul">
+                    <ui:SelectItem.Items>
+                      <scg:List x:TypeArguments="x:String" Capacity="16">
+                        <x:String>Jan</x:String>
+                        <x:String>Feb</x:String>
+                        <x:String>Mar</x:String>
+                        <x:String>Apr</x:String>
+                        <x:String>May</x:String>
+                        <x:String>Jun</x:String>
+                        <x:String>Jul</x:String>
+                        <x:String>Aug</x:String>
+                        <x:String>Sep</x:String>
+                        <x:String>Oct</x:String>
+                        <x:String>Nov</x:String>
+                        <x:String>Dec</x:String>
+                      </scg:List>
+                    </ui:SelectItem.Items>
+                    <ui:SelectItem.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9b3ea9ae-71b6-4798-903f-890cac53a905" InformativeScreenshot="86d00ef3e53dbfde523313436259ce91" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='SELECT' idx='2' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SelectItem.Target>
+                  </ui:SelectItem>
+                  <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  _struts2_jquery...'" sap:VirtualizedContainerService.HintSize="752.8,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_51" Item="2020">
+                    <ui:SelectItem.Items>
+                      <scg:List x:TypeArguments="x:String" Capacity="16">
+                        <x:String>2020</x:String>
+                        <x:String>2019</x:String>
+                        <x:String>2018</x:String>
+                        <x:String>2017</x:String>
+                        <x:String>2016</x:String>
+                        <x:String>2015</x:String>
+                        <x:String>2014</x:String>
+                        <x:String>2013</x:String>
+                        <x:String>2012</x:String>
+                        <x:String>2011</x:String>
+                      </scg:List>
+                    </ui:SelectItem.Items>
+                    <ui:SelectItem.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2ec9ddfb-bde7-417b-9a46-155929c21dfb" InformativeScreenshot="97398aa1c15a2ec9871c0e0ec9c2e466" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='SELECT' idx='3' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SelectItem.Target>
+                  </ui:SelectItem>
+                  <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  _struts2_jquery...'" sap:VirtualizedContainerService.HintSize="752.8,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_52" Item="31">
+                    <ui:SelectItem.Items>
+                      <scg:List x:TypeArguments="x:String" Capacity="32">
+                        <x:String>1</x:String>
+                        <x:String>2</x:String>
+                        <x:String>3</x:String>
+                        <x:String>4</x:String>
+                        <x:String>5</x:String>
+                        <x:String>6</x:String>
+                        <x:String>7</x:String>
+                        <x:String>8</x:String>
+                        <x:String>9</x:String>
+                        <x:String>10</x:String>
+                        <x:String>11</x:String>
+                        <x:String>12</x:String>
+                        <x:String>13</x:String>
+                        <x:String>14</x:String>
+                        <x:String>15</x:String>
+                        <x:String>16</x:String>
+                        <x:String>17</x:String>
+                        <x:String>18</x:String>
+                        <x:String>19</x:String>
+                        <x:String>20</x:String>
+                        <x:String>21</x:String>
+                        <x:String>22</x:String>
+                        <x:String>23</x:String>
+                        <x:String>24</x:String>
+                        <x:String>25</x:String>
+                        <x:String>26</x:String>
+                        <x:String>27</x:String>
+                        <x:String>28</x:String>
+                        <x:String>29</x:String>
+                        <x:String>30</x:String>
+                        <x:String>31</x:String>
+                      </scg:List>
+                    </ui:SelectItem.Items>
+                    <ui:SelectItem.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dd19be7c-bac5-46dc-91cf-eab5d65ca512" InformativeScreenshot="4199986396d42e72e289c9758fab7dd5" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='SELECT' idx='7' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SelectItem.Target>
+                  </ui:SelectItem>
+                  <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  _struts2_jquery...'" sap:VirtualizedContainerService.HintSize="752.8,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_53" Item="Jul">
+                    <ui:SelectItem.Items>
+                      <scg:List x:TypeArguments="x:String" Capacity="16">
+                        <x:String>Jan</x:String>
+                        <x:String>Feb</x:String>
+                        <x:String>Mar</x:String>
+                        <x:String>Apr</x:String>
+                        <x:String>May</x:String>
+                        <x:String>Jun</x:String>
+                        <x:String>Jul</x:String>
+                        <x:String>Aug</x:String>
+                        <x:String>Sep</x:String>
+                        <x:String>Oct</x:String>
+                        <x:String>Nov</x:String>
+                        <x:String>Dec</x:String>
+                      </scg:List>
+                    </ui:SelectItem.Items>
+                    <ui:SelectItem.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="70d9dda4-4f42-4f55-af86-e23da95d73c3" InformativeScreenshot="fee42cf1b9e876830b27941d90806df2" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='SELECT' idx='8' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SelectItem.Target>
+                  </ui:SelectItem>
+                  <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  _struts2_jquery...'" sap:VirtualizedContainerService.HintSize="752.8,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_54" Item="2020">
+                    <ui:SelectItem.Items>
+                      <scg:List x:TypeArguments="x:String" Capacity="16">
+                        <x:String>2020</x:String>
+                        <x:String>2019</x:String>
+                        <x:String>2018</x:String>
+                        <x:String>2017</x:String>
+                        <x:String>2016</x:String>
+                        <x:String>2015</x:String>
+                        <x:String>2014</x:String>
+                        <x:String>2013</x:String>
+                        <x:String>2012</x:String>
+                        <x:String>2011</x:String>
+                      </scg:List>
+                    </ui:SelectItem.Items>
+                    <ui:SelectItem.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="24f28a24-5d15-4c2d-97a9-2dd15ffecd56" InformativeScreenshot="7c249c88366da0a9859dcbb31ba242c0" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='SELECT' idx='9' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SelectItem.Target>
+                  </ui:SelectItem>
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  _struts2_jquery_4149...'" sap:VirtualizedContainerService.HintSize="752.8,107.2" sap2010:WorkflowViewState.IdRef="Click_22" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4d9b7d5a-d5a4-4215-827c-4ddafc270313" InformativeScreenshot="099618000f252f9ee7a55582d764ad70" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='A' idx='29' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Click.Target>
+                  </ui:Click>
+                  <Delay Duration="00:02:00" sap:VirtualizedContainerService.HintSize="752.8,22.4" sap2010:WorkflowViewState.IdRef="Delay_12" />
+                  <ui:UiElementExists DisplayName="Element Exists 'SPAN'" Exists="[not_Found]" sap:VirtualizedContainerService.HintSize="752.8,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                    <ui:UiElementExists.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4146c273-d0c7-48b7-8981-dce57a3ee73e" InformativeScreenshot="485e6f39e7c0d2bf0e0d8fc15c887b91" Selector="&lt;webctrl parentid='billPaymentSearchResult' tag='SPAN' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:UiElementExists.Target>
+                  </ui:UiElementExists>
+                  <If Condition="[not_Found]" sap:VirtualizedContainerService.HintSize="752.8,496.8" sap2010:WorkflowViewState.IdRef="If_7">
+                    <If.Then>
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  https://www.mypaga.c...'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_45" KeyModifiers="None" MouseButton="BTN_LEFT">
+                        <ui:Click.CursorPosition>
+                          <ui:CursorPosition Position="Center">
+                            <ui:CursorPosition.OffsetX>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetX>
+                            <ui:CursorPosition.OffsetY>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetY>
+                          </ui:CursorPosition>
+                        </ui:Click.CursorPosition>
+                        <ui:Click.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d2d77d3f-b1d1-423a-85f9-dc707a1a1251" InformativeScreenshot="140229090770fa15aa16238c2fd795c0" Selector="&lt;webctrl parentid='layout-authentication' tag='A' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:Click.Target>
+                      </ui:Click>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="375.2,347.2" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_46" KeyModifiers="None" MouseButton="BTN_LEFT">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition Position="Center">
+                              <ui:CursorPosition.OffsetX>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetX>
+                              <ui:CursorPosition.OffsetY>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetY>
+                            </ui:CursorPosition>
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2e14d123-35a9-47ed-bec6-5a4215194c56" InformativeScreenshot="f591fe02803f1623c4b4422538a366b9" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl aaname='Excel ' tag='SPAN' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  https://www.mypaga.c...'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_47" KeyModifiers="None" MouseButton="BTN_LEFT">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition Position="Center">
+                              <ui:CursorPosition.OffsetX>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetX>
+                              <ui:CursorPosition.OffsetY>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetY>
+                            </ui:CursorPosition>
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d2d77d3f-b1d1-423a-85f9-dc707a1a1251" InformativeScreenshot="140229090770fa15aa16238c2fd795c0" Selector="&lt;webctrl parentid='layout-authentication' tag='A' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <If Condition="[month_check = Sep]" sap:VirtualizedContainerService.HintSize="3687.2,2596" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="794.4,2060" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  _struts2_jquery...'" sap:VirtualizedContainerService.HintSize="752.8,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_67" Item="1">
+                        <ui:SelectItem.Items>
+                          <scg:List x:TypeArguments="x:String" Capacity="32">
+                            <x:String>1</x:String>
+                            <x:String>2</x:String>
+                            <x:String>3</x:String>
+                            <x:String>4</x:String>
+                            <x:String>5</x:String>
+                            <x:String>6</x:String>
+                            <x:String>7</x:String>
+                            <x:String>8</x:String>
+                            <x:String>9</x:String>
+                            <x:String>10</x:String>
+                            <x:String>11</x:String>
+                            <x:String>12</x:String>
+                            <x:String>13</x:String>
+                            <x:String>14</x:String>
+                            <x:String>15</x:String>
+                            <x:String>16</x:String>
+                            <x:String>17</x:String>
+                            <x:String>18</x:String>
+                            <x:String>19</x:String>
+                            <x:String>20</x:String>
+                            <x:String>21</x:String>
+                            <x:String>22</x:String>
+                            <x:String>23</x:String>
+                            <x:String>24</x:String>
+                            <x:String>25</x:String>
+                            <x:String>26</x:String>
+                            <x:String>27</x:String>
+                            <x:String>28</x:String>
+                            <x:String>29</x:String>
+                            <x:String>30</x:String>
+                            <x:String>31</x:String>
+                          </scg:List>
+                        </ui:SelectItem.Items>
+                        <ui:SelectItem.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ff4fa367-d7c5-4194-9233-1f84ff925287" InformativeScreenshot="48824492812ae3b8d5881110a2c60188" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='SELECT' idx='1' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:SelectItem.Target>
+                      </ui:SelectItem>
+                      <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  _struts2_jquery...'" sap:VirtualizedContainerService.HintSize="752.8,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_68" Item="Aug">
+                        <ui:SelectItem.Items>
+                          <scg:List x:TypeArguments="x:String" Capacity="16">
+                            <x:String>Jan</x:String>
+                            <x:String>Feb</x:String>
+                            <x:String>Mar</x:String>
+                            <x:String>Apr</x:String>
+                            <x:String>May</x:String>
+                            <x:String>Jun</x:String>
+                            <x:String>Jul</x:String>
+                            <x:String>Aug</x:String>
+                            <x:String>Sep</x:String>
+                            <x:String>Oct</x:String>
+                            <x:String>Nov</x:String>
+                            <x:String>Dec</x:String>
+                          </scg:List>
+                        </ui:SelectItem.Items>
+                        <ui:SelectItem.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9b3ea9ae-71b6-4798-903f-890cac53a905" InformativeScreenshot="86d00ef3e53dbfde523313436259ce91" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='SELECT' idx='2' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:SelectItem.Target>
+                      </ui:SelectItem>
+                      <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  _struts2_jquery...'" sap:VirtualizedContainerService.HintSize="752.8,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_69" Item="2020">
+                        <ui:SelectItem.Items>
+                          <scg:List x:TypeArguments="x:String" Capacity="16">
+                            <x:String>2020</x:String>
+                            <x:String>2019</x:String>
+                            <x:String>2018</x:String>
+                            <x:String>2017</x:String>
+                            <x:String>2016</x:String>
+                            <x:String>2015</x:String>
+                            <x:String>2014</x:String>
+                            <x:String>2013</x:String>
+                            <x:String>2012</x:String>
+                            <x:String>2011</x:String>
+                          </scg:List>
+                        </ui:SelectItem.Items>
+                        <ui:SelectItem.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2ec9ddfb-bde7-417b-9a46-155929c21dfb" InformativeScreenshot="97398aa1c15a2ec9871c0e0ec9c2e466" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='SELECT' idx='3' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:SelectItem.Target>
+                      </ui:SelectItem>
+                      <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  _struts2_jquery...'" sap:VirtualizedContainerService.HintSize="752.8,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_70" Item="31">
+                        <ui:SelectItem.Items>
+                          <scg:List x:TypeArguments="x:String" Capacity="32">
+                            <x:String>1</x:String>
+                            <x:String>2</x:String>
+                            <x:String>3</x:String>
+                            <x:String>4</x:String>
+                            <x:String>5</x:String>
+                            <x:String>6</x:String>
+                            <x:String>7</x:String>
+                            <x:String>8</x:String>
+                            <x:String>9</x:String>
+                            <x:String>10</x:String>
+                            <x:String>11</x:String>
+                            <x:String>12</x:String>
+                            <x:String>13</x:String>
+                            <x:String>14</x:String>
+                            <x:String>15</x:String>
+                            <x:String>16</x:String>
+                            <x:String>17</x:String>
+                            <x:String>18</x:String>
+                            <x:String>19</x:String>
+                            <x:String>20</x:String>
+                            <x:String>21</x:String>
+                            <x:String>22</x:String>
+                            <x:String>23</x:String>
+                            <x:String>24</x:String>
+                            <x:String>25</x:String>
+                            <x:String>26</x:String>
+                            <x:String>27</x:String>
+                            <x:String>28</x:String>
+                            <x:String>29</x:String>
+                            <x:String>30</x:String>
+                            <x:String>31</x:String>
+                          </scg:List>
+                        </ui:SelectItem.Items>
+                        <ui:SelectItem.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dd19be7c-bac5-46dc-91cf-eab5d65ca512" InformativeScreenshot="4199986396d42e72e289c9758fab7dd5" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='SELECT' idx='7' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:SelectItem.Target>
+                      </ui:SelectItem>
+                      <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  _struts2_jquery...'" sap:VirtualizedContainerService.HintSize="752.8,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_71" Item="Aug">
+                        <ui:SelectItem.Items>
+                          <scg:List x:TypeArguments="x:String" Capacity="16">
+                            <x:String>Jan</x:String>
+                            <x:String>Feb</x:String>
+                            <x:String>Mar</x:String>
+                            <x:String>Apr</x:String>
+                            <x:String>May</x:String>
+                            <x:String>Jun</x:String>
+                            <x:String>Jul</x:String>
+                            <x:String>Aug</x:String>
+                            <x:String>Sep</x:String>
+                            <x:String>Oct</x:String>
+                            <x:String>Nov</x:String>
+                            <x:String>Dec</x:String>
+                          </scg:List>
+                        </ui:SelectItem.Items>
+                        <ui:SelectItem.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="70d9dda4-4f42-4f55-af86-e23da95d73c3" InformativeScreenshot="fee42cf1b9e876830b27941d90806df2" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='SELECT' idx='8' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:SelectItem.Target>
+                      </ui:SelectItem>
+                      <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  _struts2_jquery...'" sap:VirtualizedContainerService.HintSize="752.8,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_72" Item="2020">
+                        <ui:SelectItem.Items>
+                          <scg:List x:TypeArguments="x:String" Capacity="16">
+                            <x:String>2020</x:String>
+                            <x:String>2019</x:String>
+                            <x:String>2018</x:String>
+                            <x:String>2017</x:String>
+                            <x:String>2016</x:String>
+                            <x:String>2015</x:String>
+                            <x:String>2014</x:String>
+                            <x:String>2013</x:String>
+                            <x:String>2012</x:String>
+                            <x:String>2011</x:String>
+                          </scg:List>
+                        </ui:SelectItem.Items>
+                        <ui:SelectItem.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="24f28a24-5d15-4c2d-97a9-2dd15ffecd56" InformativeScreenshot="7c249c88366da0a9859dcbb31ba242c0" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='SELECT' idx='9' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:SelectItem.Target>
+                      </ui:SelectItem>
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  _struts2_jquery_4149...'" sap:VirtualizedContainerService.HintSize="752.8,107.2" sap2010:WorkflowViewState.IdRef="Click_28" KeyModifiers="None" MouseButton="BTN_LEFT">
+                        <ui:Click.CursorPosition>
+                          <ui:CursorPosition Position="Center">
+                            <ui:CursorPosition.OffsetX>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetX>
+                            <ui:CursorPosition.OffsetY>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetY>
+                          </ui:CursorPosition>
+                        </ui:Click.CursorPosition>
+                        <ui:Click.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4d9b7d5a-d5a4-4215-827c-4ddafc270313" InformativeScreenshot="099618000f252f9ee7a55582d764ad70" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='A' idx='29' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:Click.Target>
+                      </ui:Click>
+                      <Delay Duration="00:02:00" sap:VirtualizedContainerService.HintSize="752.8,22.4" sap2010:WorkflowViewState.IdRef="Delay_15" />
+                      <ui:UiElementExists DisplayName="Element Exists 'SPAN'" Exists="[not_Found]" sap:VirtualizedContainerService.HintSize="752.8,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                        <ui:UiElementExists.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4146c273-d0c7-48b7-8981-dce57a3ee73e" InformativeScreenshot="485e6f39e7c0d2bf0e0d8fc15c887b91" Selector="&lt;webctrl parentid='billPaymentSearchResult' tag='SPAN' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:UiElementExists.Target>
+                      </ui:UiElementExists>
+                      <If Condition="[not_Found]" sap:VirtualizedContainerService.HintSize="752.8,496.8" sap2010:WorkflowViewState.IdRef="If_6">
+                        <If.Then>
+                          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  https://www.mypaga.c...'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_44" KeyModifiers="None" MouseButton="BTN_LEFT">
+                            <ui:Click.CursorPosition>
+                              <ui:CursorPosition Position="Center">
+                                <ui:CursorPosition.OffsetX>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:CursorPosition.OffsetX>
+                                <ui:CursorPosition.OffsetY>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:CursorPosition.OffsetY>
+                              </ui:CursorPosition>
+                            </ui:Click.CursorPosition>
+                            <ui:Click.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d2d77d3f-b1d1-423a-85f9-dc707a1a1251" InformativeScreenshot="140229090770fa15aa16238c2fd795c0" Selector="&lt;webctrl parentid='layout-authentication' tag='A' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:Click.Target>
+                          </ui:Click>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence sap:VirtualizedContainerService.HintSize="375.2,347.2" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_29" KeyModifiers="None" MouseButton="BTN_LEFT">
+                              <ui:Click.CursorPosition>
+                                <ui:CursorPosition Position="Center">
+                                  <ui:CursorPosition.OffsetX>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:CursorPosition.OffsetX>
+                                  <ui:CursorPosition.OffsetY>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:CursorPosition.OffsetY>
+                                </ui:CursorPosition>
+                              </ui:Click.CursorPosition>
+                              <ui:Click.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2e14d123-35a9-47ed-bec6-5a4215194c56" InformativeScreenshot="f591fe02803f1623c4b4422538a366b9" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl aaname='Excel ' tag='SPAN' /&gt;">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:Click.Target>
+                            </ui:Click>
+                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  https://www.mypaga.c...'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_40" KeyModifiers="None" MouseButton="BTN_LEFT">
+                              <ui:Click.CursorPosition>
+                                <ui:CursorPosition Position="Center">
+                                  <ui:CursorPosition.OffsetX>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:CursorPosition.OffsetX>
+                                  <ui:CursorPosition.OffsetY>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:CursorPosition.OffsetY>
+                                </ui:CursorPosition>
+                              </ui:Click.CursorPosition>
+                              <ui:Click.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d2d77d3f-b1d1-423a-85f9-dc707a1a1251" InformativeScreenshot="140229090770fa15aa16238c2fd795c0" Selector="&lt;webctrl parentid='layout-authentication' tag='A' /&gt;">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:Click.Target>
+                            </ui:Click>
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                      <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="752.8,22.4" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="iExplore" />
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <If Condition="[month_check = Oct]" sap:VirtualizedContainerService.HintSize="2848.8,2446.4" sap2010:WorkflowViewState.IdRef="If_5">
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="794.4,1997.6" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  _struts2_jquery...'" sap:VirtualizedContainerService.HintSize="752.8,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_73" Item="1">
+                            <ui:SelectItem.Items>
+                              <scg:List x:TypeArguments="x:String" Capacity="32">
+                                <x:String>1</x:String>
+                                <x:String>2</x:String>
+                                <x:String>3</x:String>
+                                <x:String>4</x:String>
+                                <x:String>5</x:String>
+                                <x:String>6</x:String>
+                                <x:String>7</x:String>
+                                <x:String>8</x:String>
+                                <x:String>9</x:String>
+                                <x:String>10</x:String>
+                                <x:String>11</x:String>
+                                <x:String>12</x:String>
+                                <x:String>13</x:String>
+                                <x:String>14</x:String>
+                                <x:String>15</x:String>
+                                <x:String>16</x:String>
+                                <x:String>17</x:String>
+                                <x:String>18</x:String>
+                                <x:String>19</x:String>
+                                <x:String>20</x:String>
+                                <x:String>21</x:String>
+                                <x:String>22</x:String>
+                                <x:String>23</x:String>
+                                <x:String>24</x:String>
+                                <x:String>25</x:String>
+                                <x:String>26</x:String>
+                                <x:String>27</x:String>
+                                <x:String>28</x:String>
+                                <x:String>29</x:String>
+                                <x:String>30</x:String>
+                                <x:String>31</x:String>
+                              </scg:List>
+                            </ui:SelectItem.Items>
+                            <ui:SelectItem.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ff4fa367-d7c5-4194-9233-1f84ff925287" InformativeScreenshot="48824492812ae3b8d5881110a2c60188" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='SELECT' idx='1' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:SelectItem.Target>
+                          </ui:SelectItem>
+                          <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  _struts2_jquery...'" sap:VirtualizedContainerService.HintSize="752.8,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_74" Item="Sep">
+                            <ui:SelectItem.Items>
+                              <scg:List x:TypeArguments="x:String" Capacity="16">
+                                <x:String>Jan</x:String>
+                                <x:String>Feb</x:String>
+                                <x:String>Mar</x:String>
+                                <x:String>Apr</x:String>
+                                <x:String>May</x:String>
+                                <x:String>Jun</x:String>
+                                <x:String>Jul</x:String>
+                                <x:String>Aug</x:String>
+                                <x:String>Sep</x:String>
+                                <x:String>Oct</x:String>
+                                <x:String>Nov</x:String>
+                                <x:String>Dec</x:String>
+                              </scg:List>
+                            </ui:SelectItem.Items>
+                            <ui:SelectItem.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9b3ea9ae-71b6-4798-903f-890cac53a905" InformativeScreenshot="86d00ef3e53dbfde523313436259ce91" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='SELECT' idx='2' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:SelectItem.Target>
+                          </ui:SelectItem>
+                          <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  _struts2_jquery...'" sap:VirtualizedContainerService.HintSize="752.8,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_75" Item="2020">
+                            <ui:SelectItem.Items>
+                              <scg:List x:TypeArguments="x:String" Capacity="16">
+                                <x:String>2020</x:String>
+                                <x:String>2019</x:String>
+                                <x:String>2018</x:String>
+                                <x:String>2017</x:String>
+                                <x:String>2016</x:String>
+                                <x:String>2015</x:String>
+                                <x:String>2014</x:String>
+                                <x:String>2013</x:String>
+                                <x:String>2012</x:String>
+                                <x:String>2011</x:String>
+                              </scg:List>
+                            </ui:SelectItem.Items>
+                            <ui:SelectItem.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2ec9ddfb-bde7-417b-9a46-155929c21dfb" InformativeScreenshot="97398aa1c15a2ec9871c0e0ec9c2e466" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='SELECT' idx='3' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:SelectItem.Target>
+                          </ui:SelectItem>
+                          <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  _struts2_jquery...'" sap:VirtualizedContainerService.HintSize="752.8,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_76" Item="31">
+                            <ui:SelectItem.Items>
+                              <scg:List x:TypeArguments="x:String" Capacity="32">
+                                <x:String>1</x:String>
+                                <x:String>2</x:String>
+                                <x:String>3</x:String>
+                                <x:String>4</x:String>
+                                <x:String>5</x:String>
+                                <x:String>6</x:String>
+                                <x:String>7</x:String>
+                                <x:String>8</x:String>
+                                <x:String>9</x:String>
+                                <x:String>10</x:String>
+                                <x:String>11</x:String>
+                                <x:String>12</x:String>
+                                <x:String>13</x:String>
+                                <x:String>14</x:String>
+                                <x:String>15</x:String>
+                                <x:String>16</x:String>
+                                <x:String>17</x:String>
+                                <x:String>18</x:String>
+                                <x:String>19</x:String>
+                                <x:String>20</x:String>
+                                <x:String>21</x:String>
+                                <x:String>22</x:String>
+                                <x:String>23</x:String>
+                                <x:String>24</x:String>
+                                <x:String>25</x:String>
+                                <x:String>26</x:String>
+                                <x:String>27</x:String>
+                                <x:String>28</x:String>
+                                <x:String>29</x:String>
+                                <x:String>30</x:String>
+                                <x:String>31</x:String>
+                              </scg:List>
+                            </ui:SelectItem.Items>
+                            <ui:SelectItem.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dd19be7c-bac5-46dc-91cf-eab5d65ca512" InformativeScreenshot="4199986396d42e72e289c9758fab7dd5" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='SELECT' idx='7' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:SelectItem.Target>
+                          </ui:SelectItem>
+                          <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  _struts2_jquery...'" sap:VirtualizedContainerService.HintSize="752.8,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_77" Item="Sep">
+                            <ui:SelectItem.Items>
+                              <scg:List x:TypeArguments="x:String" Capacity="16">
+                                <x:String>Jan</x:String>
+                                <x:String>Feb</x:String>
+                                <x:String>Mar</x:String>
+                                <x:String>Apr</x:String>
+                                <x:String>May</x:String>
+                                <x:String>Jun</x:String>
+                                <x:String>Jul</x:String>
+                                <x:String>Aug</x:String>
+                                <x:String>Sep</x:String>
+                                <x:String>Oct</x:String>
+                                <x:String>Nov</x:String>
+                                <x:String>Dec</x:String>
+                              </scg:List>
+                            </ui:SelectItem.Items>
+                            <ui:SelectItem.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="70d9dda4-4f42-4f55-af86-e23da95d73c3" InformativeScreenshot="fee42cf1b9e876830b27941d90806df2" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='SELECT' idx='8' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:SelectItem.Target>
+                          </ui:SelectItem>
+                          <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  _struts2_jquery...'" sap:VirtualizedContainerService.HintSize="752.8,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_78" Item="2020">
+                            <ui:SelectItem.Items>
+                              <scg:List x:TypeArguments="x:String" Capacity="16">
+                                <x:String>2020</x:String>
+                                <x:String>2019</x:String>
+                                <x:String>2018</x:String>
+                                <x:String>2017</x:String>
+                                <x:String>2016</x:String>
+                                <x:String>2015</x:String>
+                                <x:String>2014</x:String>
+                                <x:String>2013</x:String>
+                                <x:String>2012</x:String>
+                                <x:String>2011</x:String>
+                              </scg:List>
+                            </ui:SelectItem.Items>
+                            <ui:SelectItem.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="24f28a24-5d15-4c2d-97a9-2dd15ffecd56" InformativeScreenshot="7c249c88366da0a9859dcbb31ba242c0" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='SELECT' idx='9' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:SelectItem.Target>
+                          </ui:SelectItem>
+                          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  _struts2_jquery_4149...'" sap:VirtualizedContainerService.HintSize="752.8,107.2" sap2010:WorkflowViewState.IdRef="Click_30" KeyModifiers="None" MouseButton="BTN_LEFT">
+                            <ui:Click.CursorPosition>
+                              <ui:CursorPosition Position="Center">
+                                <ui:CursorPosition.OffsetX>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:CursorPosition.OffsetX>
+                                <ui:CursorPosition.OffsetY>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:CursorPosition.OffsetY>
+                              </ui:CursorPosition>
+                            </ui:Click.CursorPosition>
+                            <ui:Click.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4d9b7d5a-d5a4-4215-827c-4ddafc270313" InformativeScreenshot="099618000f252f9ee7a55582d764ad70" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='A' idx='29' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:Click.Target>
+                          </ui:Click>
+                          <Delay Duration="00:02:00" sap:VirtualizedContainerService.HintSize="752.8,22.4" sap2010:WorkflowViewState.IdRef="Delay_16" />
+                          <ui:UiElementExists DisplayName="Element Exists 'SPAN'" Exists="[not_Found]" sap:VirtualizedContainerService.HintSize="752.8,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+                            <ui:UiElementExists.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4146c273-d0c7-48b7-8981-dce57a3ee73e" InformativeScreenshot="485e6f39e7c0d2bf0e0d8fc15c887b91" Selector="&lt;webctrl parentid='billPaymentSearchResult' tag='SPAN' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:UiElementExists.Target>
+                          </ui:UiElementExists>
+                          <If Condition="[not_Found]" sap:VirtualizedContainerService.HintSize="752.8,496.8" sap2010:WorkflowViewState.IdRef="If_8">
+                            <If.Then>
+                              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  https://www.mypaga.c...'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_48" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                <ui:Click.CursorPosition>
+                                  <ui:CursorPosition Position="Center">
+                                    <ui:CursorPosition.OffsetX>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetX>
+                                    <ui:CursorPosition.OffsetY>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetY>
+                                  </ui:CursorPosition>
+                                </ui:Click.CursorPosition>
+                                <ui:Click.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d2d77d3f-b1d1-423a-85f9-dc707a1a1251" InformativeScreenshot="140229090770fa15aa16238c2fd795c0" Selector="&lt;webctrl parentid='layout-authentication' tag='A' /&gt;">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:Click.Target>
+                              </ui:Click>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence sap:VirtualizedContainerService.HintSize="375.2,347.2" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_49" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition Position="Center">
+                                      <ui:CursorPosition.OffsetX>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetX>
+                                      <ui:CursorPosition.OffsetY>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetY>
+                                    </ui:CursorPosition>
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2e14d123-35a9-47ed-bec6-5a4215194c56" InformativeScreenshot="f591fe02803f1623c4b4422538a366b9" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl aaname='Excel ' tag='SPAN' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                </ui:Click>
+                                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  https://www.mypaga.c...'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_50" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition Position="Center">
+                                      <ui:CursorPosition.OffsetX>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetX>
+                                      <ui:CursorPosition.OffsetY>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetY>
+                                    </ui:CursorPosition>
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d2d77d3f-b1d1-423a-85f9-dc707a1a1251" InformativeScreenshot="140229090770fa15aa16238c2fd795c0" Selector="&lt;webctrl parentid='layout-authentication' tag='A' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                </ui:Click>
+                              </Sequence>
+                            </If.Else>
+                          </If>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <If Condition="[month_check = Nov]" sap:VirtualizedContainerService.HintSize="2010.4,2296.8" sap2010:WorkflowViewState.IdRef="If_4">
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="794.4,1997.6" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  _struts2_jquery...'" sap:VirtualizedContainerService.HintSize="752.8,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_79" Item="1">
+                                <ui:SelectItem.Items>
+                                  <scg:List x:TypeArguments="x:String" Capacity="32">
+                                    <x:String>1</x:String>
+                                    <x:String>2</x:String>
+                                    <x:String>3</x:String>
+                                    <x:String>4</x:String>
+                                    <x:String>5</x:String>
+                                    <x:String>6</x:String>
+                                    <x:String>7</x:String>
+                                    <x:String>8</x:String>
+                                    <x:String>9</x:String>
+                                    <x:String>10</x:String>
+                                    <x:String>11</x:String>
+                                    <x:String>12</x:String>
+                                    <x:String>13</x:String>
+                                    <x:String>14</x:String>
+                                    <x:String>15</x:String>
+                                    <x:String>16</x:String>
+                                    <x:String>17</x:String>
+                                    <x:String>18</x:String>
+                                    <x:String>19</x:String>
+                                    <x:String>20</x:String>
+                                    <x:String>21</x:String>
+                                    <x:String>22</x:String>
+                                    <x:String>23</x:String>
+                                    <x:String>24</x:String>
+                                    <x:String>25</x:String>
+                                    <x:String>26</x:String>
+                                    <x:String>27</x:String>
+                                    <x:String>28</x:String>
+                                    <x:String>29</x:String>
+                                    <x:String>30</x:String>
+                                    <x:String>31</x:String>
+                                  </scg:List>
+                                </ui:SelectItem.Items>
+                                <ui:SelectItem.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ff4fa367-d7c5-4194-9233-1f84ff925287" InformativeScreenshot="48824492812ae3b8d5881110a2c60188" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='SELECT' idx='1' /&gt;">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:SelectItem.Target>
+                              </ui:SelectItem>
+                              <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  _struts2_jquery...'" sap:VirtualizedContainerService.HintSize="752.8,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_80" Item="Oct">
+                                <ui:SelectItem.Items>
+                                  <scg:List x:TypeArguments="x:String" Capacity="16">
+                                    <x:String>Jan</x:String>
+                                    <x:String>Feb</x:String>
+                                    <x:String>Mar</x:String>
+                                    <x:String>Apr</x:String>
+                                    <x:String>May</x:String>
+                                    <x:String>Jun</x:String>
+                                    <x:String>Jul</x:String>
+                                    <x:String>Aug</x:String>
+                                    <x:String>Sep</x:String>
+                                    <x:String>Oct</x:String>
+                                    <x:String>Nov</x:String>
+                                    <x:String>Dec</x:String>
+                                  </scg:List>
+                                </ui:SelectItem.Items>
+                                <ui:SelectItem.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9b3ea9ae-71b6-4798-903f-890cac53a905" InformativeScreenshot="86d00ef3e53dbfde523313436259ce91" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='SELECT' idx='2' /&gt;">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:SelectItem.Target>
+                              </ui:SelectItem>
+                              <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  _struts2_jquery...'" sap:VirtualizedContainerService.HintSize="752.8,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_81" Item="2020">
+                                <ui:SelectItem.Items>
+                                  <scg:List x:TypeArguments="x:String" Capacity="16">
+                                    <x:String>2020</x:String>
+                                    <x:String>2019</x:String>
+                                    <x:String>2018</x:String>
+                                    <x:String>2017</x:String>
+                                    <x:String>2016</x:String>
+                                    <x:String>2015</x:String>
+                                    <x:String>2014</x:String>
+                                    <x:String>2013</x:String>
+                                    <x:String>2012</x:String>
+                                    <x:String>2011</x:String>
+                                  </scg:List>
+                                </ui:SelectItem.Items>
+                                <ui:SelectItem.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2ec9ddfb-bde7-417b-9a46-155929c21dfb" InformativeScreenshot="97398aa1c15a2ec9871c0e0ec9c2e466" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='SELECT' idx='3' /&gt;">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:SelectItem.Target>
+                              </ui:SelectItem>
+                              <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  _struts2_jquery...'" sap:VirtualizedContainerService.HintSize="752.8,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_82" Item="31">
+                                <ui:SelectItem.Items>
+                                  <scg:List x:TypeArguments="x:String" Capacity="32">
+                                    <x:String>1</x:String>
+                                    <x:String>2</x:String>
+                                    <x:String>3</x:String>
+                                    <x:String>4</x:String>
+                                    <x:String>5</x:String>
+                                    <x:String>6</x:String>
+                                    <x:String>7</x:String>
+                                    <x:String>8</x:String>
+                                    <x:String>9</x:String>
+                                    <x:String>10</x:String>
+                                    <x:String>11</x:String>
+                                    <x:String>12</x:String>
+                                    <x:String>13</x:String>
+                                    <x:String>14</x:String>
+                                    <x:String>15</x:String>
+                                    <x:String>16</x:String>
+                                    <x:String>17</x:String>
+                                    <x:String>18</x:String>
+                                    <x:String>19</x:String>
+                                    <x:String>20</x:String>
+                                    <x:String>21</x:String>
+                                    <x:String>22</x:String>
+                                    <x:String>23</x:String>
+                                    <x:String>24</x:String>
+                                    <x:String>25</x:String>
+                                    <x:String>26</x:String>
+                                    <x:String>27</x:String>
+                                    <x:String>28</x:String>
+                                    <x:String>29</x:String>
+                                    <x:String>30</x:String>
+                                    <x:String>31</x:String>
+                                  </scg:List>
+                                </ui:SelectItem.Items>
+                                <ui:SelectItem.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dd19be7c-bac5-46dc-91cf-eab5d65ca512" InformativeScreenshot="4199986396d42e72e289c9758fab7dd5" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='SELECT' idx='7' /&gt;">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:SelectItem.Target>
+                              </ui:SelectItem>
+                              <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  _struts2_jquery...'" sap:VirtualizedContainerService.HintSize="752.8,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_83" Item="Oct">
+                                <ui:SelectItem.Items>
+                                  <scg:List x:TypeArguments="x:String" Capacity="16">
+                                    <x:String>Jan</x:String>
+                                    <x:String>Feb</x:String>
+                                    <x:String>Mar</x:String>
+                                    <x:String>Apr</x:String>
+                                    <x:String>May</x:String>
+                                    <x:String>Jun</x:String>
+                                    <x:String>Jul</x:String>
+                                    <x:String>Aug</x:String>
+                                    <x:String>Sep</x:String>
+                                    <x:String>Oct</x:String>
+                                    <x:String>Nov</x:String>
+                                    <x:String>Dec</x:String>
+                                  </scg:List>
+                                </ui:SelectItem.Items>
+                                <ui:SelectItem.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="70d9dda4-4f42-4f55-af86-e23da95d73c3" InformativeScreenshot="fee42cf1b9e876830b27941d90806df2" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='SELECT' idx='8' /&gt;">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:SelectItem.Target>
+                              </ui:SelectItem>
+                              <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  _struts2_jquery...'" sap:VirtualizedContainerService.HintSize="752.8,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_84" Item="2020">
+                                <ui:SelectItem.Items>
+                                  <scg:List x:TypeArguments="x:String" Capacity="16">
+                                    <x:String>2020</x:String>
+                                    <x:String>2019</x:String>
+                                    <x:String>2018</x:String>
+                                    <x:String>2017</x:String>
+                                    <x:String>2016</x:String>
+                                    <x:String>2015</x:String>
+                                    <x:String>2014</x:String>
+                                    <x:String>2013</x:String>
+                                    <x:String>2012</x:String>
+                                    <x:String>2011</x:String>
+                                  </scg:List>
+                                </ui:SelectItem.Items>
+                                <ui:SelectItem.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="24f28a24-5d15-4c2d-97a9-2dd15ffecd56" InformativeScreenshot="7c249c88366da0a9859dcbb31ba242c0" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='SELECT' idx='9' /&gt;">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:SelectItem.Target>
+                              </ui:SelectItem>
+                              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  _struts2_jquery_4149...'" sap:VirtualizedContainerService.HintSize="752.8,107.2" sap2010:WorkflowViewState.IdRef="Click_32" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                <ui:Click.CursorPosition>
+                                  <ui:CursorPosition Position="Center">
+                                    <ui:CursorPosition.OffsetX>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetX>
+                                    <ui:CursorPosition.OffsetY>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetY>
+                                  </ui:CursorPosition>
+                                </ui:Click.CursorPosition>
+                                <ui:Click.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4d9b7d5a-d5a4-4215-827c-4ddafc270313" InformativeScreenshot="099618000f252f9ee7a55582d764ad70" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='A' idx='29' /&gt;">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:Click.Target>
+                              </ui:Click>
+                              <Delay Duration="00:02:00" sap:VirtualizedContainerService.HintSize="752.8,22.4" sap2010:WorkflowViewState.IdRef="Delay_17" />
+                              <ui:UiElementExists DisplayName="Element Exists 'SPAN'" Exists="[not_Found]" sap:VirtualizedContainerService.HintSize="752.8,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+                                <ui:UiElementExists.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4146c273-d0c7-48b7-8981-dce57a3ee73e" InformativeScreenshot="485e6f39e7c0d2bf0e0d8fc15c887b91" Selector="&lt;webctrl parentid='billPaymentSearchResult' tag='SPAN' /&gt;">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:UiElementExists.Target>
+                              </ui:UiElementExists>
+                              <If Condition="[not_Found]" sap:VirtualizedContainerService.HintSize="752.8,496.8" sap2010:WorkflowViewState.IdRef="If_9">
+                                <If.Then>
+                                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  https://www.mypaga.c...'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_51" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                    <ui:Click.CursorPosition>
+                                      <ui:CursorPosition Position="Center">
+                                        <ui:CursorPosition.OffsetX>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:CursorPosition.OffsetX>
+                                        <ui:CursorPosition.OffsetY>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:CursorPosition.OffsetY>
+                                      </ui:CursorPosition>
+                                    </ui:Click.CursorPosition>
+                                    <ui:Click.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d2d77d3f-b1d1-423a-85f9-dc707a1a1251" InformativeScreenshot="140229090770fa15aa16238c2fd795c0" Selector="&lt;webctrl parentid='layout-authentication' tag='A' /&gt;">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                        <ui:Target.WaitForReady>
+                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                        </ui:Target.WaitForReady>
+                                      </ui:Target>
+                                    </ui:Click.Target>
+                                  </ui:Click>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="375.2,347.2" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_52" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                      <ui:Click.CursorPosition>
+                                        <ui:CursorPosition Position="Center">
+                                          <ui:CursorPosition.OffsetX>
+                                            <InArgument x:TypeArguments="x:Int32" />
+                                          </ui:CursorPosition.OffsetX>
+                                          <ui:CursorPosition.OffsetY>
+                                            <InArgument x:TypeArguments="x:Int32" />
+                                          </ui:CursorPosition.OffsetY>
+                                        </ui:CursorPosition>
+                                      </ui:Click.CursorPosition>
+                                      <ui:Click.Target>
+                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2e14d123-35a9-47ed-bec6-5a4215194c56" InformativeScreenshot="f591fe02803f1623c4b4422538a366b9" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl aaname='Excel ' tag='SPAN' /&gt;">
+                                          <ui:Target.TimeoutMS>
+                                            <InArgument x:TypeArguments="x:Int32" />
+                                          </ui:Target.TimeoutMS>
+                                          <ui:Target.WaitForReady>
+                                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                                          </ui:Target.WaitForReady>
+                                        </ui:Target>
+                                      </ui:Click.Target>
+                                    </ui:Click>
+                                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  https://www.mypaga.c...'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_53" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                      <ui:Click.CursorPosition>
+                                        <ui:CursorPosition Position="Center">
+                                          <ui:CursorPosition.OffsetX>
+                                            <InArgument x:TypeArguments="x:Int32" />
+                                          </ui:CursorPosition.OffsetX>
+                                          <ui:CursorPosition.OffsetY>
+                                            <InArgument x:TypeArguments="x:Int32" />
+                                          </ui:CursorPosition.OffsetY>
+                                        </ui:CursorPosition>
+                                      </ui:Click.CursorPosition>
+                                      <ui:Click.Target>
+                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d2d77d3f-b1d1-423a-85f9-dc707a1a1251" InformativeScreenshot="140229090770fa15aa16238c2fd795c0" Selector="&lt;webctrl parentid='layout-authentication' tag='A' /&gt;">
+                                          <ui:Target.TimeoutMS>
+                                            <InArgument x:TypeArguments="x:Int32" />
+                                          </ui:Target.TimeoutMS>
+                                          <ui:Target.WaitForReady>
+                                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                                          </ui:Target.WaitForReady>
+                                        </ui:Target>
+                                      </ui:Click.Target>
+                                    </ui:Click>
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <If Condition="[month_check = Dec]" sap:VirtualizedContainerService.HintSize="1172,2147.2" sap2010:WorkflowViewState.IdRef="If_3">
+                              <If.Then>
+                                <Sequence sap:VirtualizedContainerService.HintSize="794.4,1997.6" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  _struts2_jquery...'" sap:VirtualizedContainerService.HintSize="752.8,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_85" Item="1">
+                                    <ui:SelectItem.Items>
+                                      <scg:List x:TypeArguments="x:String" Capacity="32">
+                                        <x:String>1</x:String>
+                                        <x:String>2</x:String>
+                                        <x:String>3</x:String>
+                                        <x:String>4</x:String>
+                                        <x:String>5</x:String>
+                                        <x:String>6</x:String>
+                                        <x:String>7</x:String>
+                                        <x:String>8</x:String>
+                                        <x:String>9</x:String>
+                                        <x:String>10</x:String>
+                                        <x:String>11</x:String>
+                                        <x:String>12</x:String>
+                                        <x:String>13</x:String>
+                                        <x:String>14</x:String>
+                                        <x:String>15</x:String>
+                                        <x:String>16</x:String>
+                                        <x:String>17</x:String>
+                                        <x:String>18</x:String>
+                                        <x:String>19</x:String>
+                                        <x:String>20</x:String>
+                                        <x:String>21</x:String>
+                                        <x:String>22</x:String>
+                                        <x:String>23</x:String>
+                                        <x:String>24</x:String>
+                                        <x:String>25</x:String>
+                                        <x:String>26</x:String>
+                                        <x:String>27</x:String>
+                                        <x:String>28</x:String>
+                                        <x:String>29</x:String>
+                                        <x:String>30</x:String>
+                                        <x:String>31</x:String>
+                                      </scg:List>
+                                    </ui:SelectItem.Items>
+                                    <ui:SelectItem.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ff4fa367-d7c5-4194-9233-1f84ff925287" InformativeScreenshot="48824492812ae3b8d5881110a2c60188" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='SELECT' idx='1' /&gt;">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                        <ui:Target.WaitForReady>
+                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                        </ui:Target.WaitForReady>
+                                      </ui:Target>
+                                    </ui:SelectItem.Target>
+                                  </ui:SelectItem>
+                                  <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  _struts2_jquery...'" sap:VirtualizedContainerService.HintSize="752.8,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_86" Item="Nov">
+                                    <ui:SelectItem.Items>
+                                      <scg:List x:TypeArguments="x:String" Capacity="16">
+                                        <x:String>Jan</x:String>
+                                        <x:String>Feb</x:String>
+                                        <x:String>Mar</x:String>
+                                        <x:String>Apr</x:String>
+                                        <x:String>May</x:String>
+                                        <x:String>Jun</x:String>
+                                        <x:String>Jul</x:String>
+                                        <x:String>Aug</x:String>
+                                        <x:String>Sep</x:String>
+                                        <x:String>Oct</x:String>
+                                        <x:String>Nov</x:String>
+                                        <x:String>Dec</x:String>
+                                      </scg:List>
+                                    </ui:SelectItem.Items>
+                                    <ui:SelectItem.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9b3ea9ae-71b6-4798-903f-890cac53a905" InformativeScreenshot="86d00ef3e53dbfde523313436259ce91" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='SELECT' idx='2' /&gt;">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                        <ui:Target.WaitForReady>
+                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                        </ui:Target.WaitForReady>
+                                      </ui:Target>
+                                    </ui:SelectItem.Target>
+                                  </ui:SelectItem>
+                                  <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  _struts2_jquery...'" sap:VirtualizedContainerService.HintSize="752.8,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_87" Item="2020">
+                                    <ui:SelectItem.Items>
+                                      <scg:List x:TypeArguments="x:String" Capacity="16">
+                                        <x:String>2020</x:String>
+                                        <x:String>2019</x:String>
+                                        <x:String>2018</x:String>
+                                        <x:String>2017</x:String>
+                                        <x:String>2016</x:String>
+                                        <x:String>2015</x:String>
+                                        <x:String>2014</x:String>
+                                        <x:String>2013</x:String>
+                                        <x:String>2012</x:String>
+                                        <x:String>2011</x:String>
+                                      </scg:List>
+                                    </ui:SelectItem.Items>
+                                    <ui:SelectItem.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2ec9ddfb-bde7-417b-9a46-155929c21dfb" InformativeScreenshot="97398aa1c15a2ec9871c0e0ec9c2e466" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='SELECT' idx='3' /&gt;">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                        <ui:Target.WaitForReady>
+                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                        </ui:Target.WaitForReady>
+                                      </ui:Target>
+                                    </ui:SelectItem.Target>
+                                  </ui:SelectItem>
+                                  <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  _struts2_jquery...'" sap:VirtualizedContainerService.HintSize="752.8,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_88" Item="30">
+                                    <ui:SelectItem.Items>
+                                      <scg:List x:TypeArguments="x:String" Capacity="32">
+                                        <x:String>1</x:String>
+                                        <x:String>2</x:String>
+                                        <x:String>3</x:String>
+                                        <x:String>4</x:String>
+                                        <x:String>5</x:String>
+                                        <x:String>6</x:String>
+                                        <x:String>7</x:String>
+                                        <x:String>8</x:String>
+                                        <x:String>9</x:String>
+                                        <x:String>10</x:String>
+                                        <x:String>11</x:String>
+                                        <x:String>12</x:String>
+                                        <x:String>13</x:String>
+                                        <x:String>14</x:String>
+                                        <x:String>15</x:String>
+                                        <x:String>16</x:String>
+                                        <x:String>17</x:String>
+                                        <x:String>18</x:String>
+                                        <x:String>19</x:String>
+                                        <x:String>20</x:String>
+                                        <x:String>21</x:String>
+                                        <x:String>22</x:String>
+                                        <x:String>23</x:String>
+                                        <x:String>24</x:String>
+                                        <x:String>25</x:String>
+                                        <x:String>26</x:String>
+                                        <x:String>27</x:String>
+                                        <x:String>28</x:String>
+                                        <x:String>29</x:String>
+                                        <x:String>30</x:String>
+                                        <x:String>31</x:String>
+                                      </scg:List>
+                                    </ui:SelectItem.Items>
+                                    <ui:SelectItem.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dd19be7c-bac5-46dc-91cf-eab5d65ca512" InformativeScreenshot="4199986396d42e72e289c9758fab7dd5" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='SELECT' idx='7' /&gt;">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                        <ui:Target.WaitForReady>
+                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                        </ui:Target.WaitForReady>
+                                      </ui:Target>
+                                    </ui:SelectItem.Target>
+                                  </ui:SelectItem>
+                                  <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  _struts2_jquery...'" sap:VirtualizedContainerService.HintSize="752.8,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_89" Item="Dec">
+                                    <ui:SelectItem.Items>
+                                      <scg:List x:TypeArguments="x:String" Capacity="16">
+                                        <x:String>Jan</x:String>
+                                        <x:String>Feb</x:String>
+                                        <x:String>Mar</x:String>
+                                        <x:String>Apr</x:String>
+                                        <x:String>May</x:String>
+                                        <x:String>Jun</x:String>
+                                        <x:String>Jul</x:String>
+                                        <x:String>Aug</x:String>
+                                        <x:String>Sep</x:String>
+                                        <x:String>Oct</x:String>
+                                        <x:String>Nov</x:String>
+                                        <x:String>Dec</x:String>
+                                      </scg:List>
+                                    </ui:SelectItem.Items>
+                                    <ui:SelectItem.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="70d9dda4-4f42-4f55-af86-e23da95d73c3" InformativeScreenshot="fee42cf1b9e876830b27941d90806df2" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='SELECT' idx='8' /&gt;">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                        <ui:Target.WaitForReady>
+                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                        </ui:Target.WaitForReady>
+                                      </ui:Target>
+                                    </ui:SelectItem.Target>
+                                  </ui:SelectItem>
+                                  <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  _struts2_jquery...'" sap:VirtualizedContainerService.HintSize="752.8,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_90" Item="2020">
+                                    <ui:SelectItem.Items>
+                                      <scg:List x:TypeArguments="x:String" Capacity="16">
+                                        <x:String>2020</x:String>
+                                        <x:String>2019</x:String>
+                                        <x:String>2018</x:String>
+                                        <x:String>2017</x:String>
+                                        <x:String>2016</x:String>
+                                        <x:String>2015</x:String>
+                                        <x:String>2014</x:String>
+                                        <x:String>2013</x:String>
+                                        <x:String>2012</x:String>
+                                        <x:String>2011</x:String>
+                                      </scg:List>
+                                    </ui:SelectItem.Items>
+                                    <ui:SelectItem.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="24f28a24-5d15-4c2d-97a9-2dd15ffecd56" InformativeScreenshot="7c249c88366da0a9859dcbb31ba242c0" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='SELECT' idx='9' /&gt;">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                        <ui:Target.WaitForReady>
+                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                        </ui:Target.WaitForReady>
+                                      </ui:Target>
+                                    </ui:SelectItem.Target>
+                                  </ui:SelectItem>
+                                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  _struts2_jquery_4149...'" sap:VirtualizedContainerService.HintSize="752.8,107.2" sap2010:WorkflowViewState.IdRef="Click_34" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                    <ui:Click.CursorPosition>
+                                      <ui:CursorPosition Position="Center">
+                                        <ui:CursorPosition.OffsetX>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:CursorPosition.OffsetX>
+                                        <ui:CursorPosition.OffsetY>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:CursorPosition.OffsetY>
+                                      </ui:CursorPosition>
+                                    </ui:Click.CursorPosition>
+                                    <ui:Click.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4d9b7d5a-d5a4-4215-827c-4ddafc270313" InformativeScreenshot="099618000f252f9ee7a55582d764ad70" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl tag='A' idx='29' /&gt;">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                        <ui:Target.WaitForReady>
+                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                        </ui:Target.WaitForReady>
+                                      </ui:Target>
+                                    </ui:Click.Target>
+                                  </ui:Click>
+                                  <Delay Duration="00:02:00" sap:VirtualizedContainerService.HintSize="752.8,22.4" sap2010:WorkflowViewState.IdRef="Delay_18" />
+                                  <ui:UiElementExists DisplayName="Element Exists 'SPAN'" Exists="[not_Found]" sap:VirtualizedContainerService.HintSize="752.8,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
+                                    <ui:UiElementExists.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4146c273-d0c7-48b7-8981-dce57a3ee73e" InformativeScreenshot="485e6f39e7c0d2bf0e0d8fc15c887b91" Selector="&lt;webctrl parentid='billPaymentSearchResult' tag='SPAN' /&gt;">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                        <ui:Target.WaitForReady>
+                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                        </ui:Target.WaitForReady>
+                                      </ui:Target>
+                                    </ui:UiElementExists.Target>
+                                  </ui:UiElementExists>
+                                  <If Condition="[not_Found]" sap:VirtualizedContainerService.HintSize="752.8,496.8" sap2010:WorkflowViewState.IdRef="If_10">
+                                    <If.Then>
+                                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  https://www.mypaga.c...'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_54" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                        <ui:Click.CursorPosition>
+                                          <ui:CursorPosition Position="Center">
+                                            <ui:CursorPosition.OffsetX>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:CursorPosition.OffsetX>
+                                            <ui:CursorPosition.OffsetY>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:CursorPosition.OffsetY>
+                                          </ui:CursorPosition>
+                                        </ui:Click.CursorPosition>
+                                        <ui:Click.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d2d77d3f-b1d1-423a-85f9-dc707a1a1251" InformativeScreenshot="140229090770fa15aa16238c2fd795c0" Selector="&lt;webctrl parentid='layout-authentication' tag='A' /&gt;">
+                                            <ui:Target.TimeoutMS>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:Target.TimeoutMS>
+                                            <ui:Target.WaitForReady>
+                                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                                            </ui:Target.WaitForReady>
+                                          </ui:Target>
+                                        </ui:Click.Target>
+                                      </ui:Click>
+                                    </If.Then>
+                                    <If.Else>
+                                      <Sequence sap:VirtualizedContainerService.HintSize="375.2,347.2" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_55" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                          <ui:Click.CursorPosition>
+                                            <ui:CursorPosition Position="Center">
+                                              <ui:CursorPosition.OffsetX>
+                                                <InArgument x:TypeArguments="x:Int32" />
+                                              </ui:CursorPosition.OffsetX>
+                                              <ui:CursorPosition.OffsetY>
+                                                <InArgument x:TypeArguments="x:Int32" />
+                                              </ui:CursorPosition.OffsetY>
+                                            </ui:CursorPosition>
+                                          </ui:Click.CursorPosition>
+                                          <ui:Click.Target>
+                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2e14d123-35a9-47ed-bec6-5a4215194c56" InformativeScreenshot="f591fe02803f1623c4b4422538a366b9" Selector="&lt;html title='Paga - Your Cash, Anywhere, Anytime' /&gt;&lt;webctrl aaname='Excel ' tag='SPAN' /&gt;">
+                                              <ui:Target.TimeoutMS>
+                                                <InArgument x:TypeArguments="x:Int32" />
+                                              </ui:Target.TimeoutMS>
+                                              <ui:Target.WaitForReady>
+                                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                                              </ui:Target.WaitForReady>
+                                            </ui:Target>
+                                          </ui:Click.Target>
+                                        </ui:Click>
+                                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  https://www.mypaga.c...'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_56" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                          <ui:Click.CursorPosition>
+                                            <ui:CursorPosition Position="Center">
+                                              <ui:CursorPosition.OffsetX>
+                                                <InArgument x:TypeArguments="x:Int32" />
+                                              </ui:CursorPosition.OffsetX>
+                                              <ui:CursorPosition.OffsetY>
+                                                <InArgument x:TypeArguments="x:Int32" />
+                                              </ui:CursorPosition.OffsetY>
+                                            </ui:CursorPosition>
+                                          </ui:Click.CursorPosition>
+                                          <ui:Click.Target>
+                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d2d77d3f-b1d1-423a-85f9-dc707a1a1251" InformativeScreenshot="140229090770fa15aa16238c2fd795c0" Selector="&lt;webctrl parentid='layout-authentication' tag='A' /&gt;">
+                                              <ui:Target.TimeoutMS>
+                                                <InArgument x:TypeArguments="x:Int32" />
+                                              </ui:Target.TimeoutMS>
+                                              <ui:Target.WaitForReady>
+                                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                                              </ui:Target.WaitForReady>
+                                            </ui:Target>
+                                          </ui:Click.Target>
+                                        </ui:Click>
+                                      </Sequence>
+                                    </If.Else>
+                                  </If>
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'HTML  https://www.mypag...'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_38" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition Position="Center">
+                                      <ui:CursorPosition.OffsetX>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetX>
+                                      <ui:CursorPosition.OffsetY>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetY>
+                                    </ui:CursorPosition>
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cd13f2df-2b88-4558-805f-31a9f6944f44" InformativeScreenshot="49042402f1f6298da440db564fdc01fb" Selector="&lt;webctrl parentid='layout-authentication' tag='A' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                </ui:Click>
+                              </If.Else>
+                            </If>
+                          </If.Else>
+                        </If>
+                      </If.Else>
+                    </If>
+                  </If.Else>
+                </If>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:OpenBrowser.Body>
+    </ui:OpenBrowser>
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="4600.8,608.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" Visible="False" WorkbookPath="C:\Users\Hudeh\Dropbox\My PC (Hudehtech)\Documents\UiPath\Paga_Bank_Statement_Mapping_v2.xls">
+      <ui:ExcelApplicationScope.Body>
+        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="466.4,499.2" sap2010:WorkflowViewState.IdRef="Sequence_38">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ExcelReadRange AddHeaders="True" DataTable="[PageStatement]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="424.8,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="Sheet1">
+              <ui:ExcelReadRange.Range>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </ui:ExcelReadRange.Range>
+            </ui:ExcelReadRange>
+            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[PageStatement]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="424.8,306.4" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="375.2,157.6" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" Value="{x:Null}" ColumnName="Transaction ID" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="333.6,64.8" sap2010:WorkflowViewState.IdRef="GetRowItem_1" Row="[row]" />
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+            </ui:ForEachRow>
+          </Sequence>
+        </ActivityAction>
+      </ui:ExcelApplicationScope.Body>
+    </ui:ExcelApplicationScope>
+  </Sequence>
+</Activity>
